@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'NotoSansKR-Bold-Alphabetic';
+  src: url('NotoSansKR-Bold-Alphabetic.eot');
+  src: url('NotoSansKR-Bold-Alphabetic.eot?#iefix') format('embedded-opentype'),
+       url('NotoSansKR-Bold-Alphabetic.svg#NotoSansKR-Bold-Alphabetic') format('svg'),
+       url('NotoSansKR-Bold-Alphabetic.ttf') format('truetype'),
+       url('NotoSansKR-Bold-Alphabetic.woff') format('woff'),
+       url('NotoSansKR-Bold-Alphabetic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'NotoSansKR-Medium-Alphabetic';
+  src: url('NotoSansKR-Medium-Alphabetic.eot');
+  src: url('NotoSansKR-Medium-Alphabetic.eot?#iefix') format('embedded-opentype'),
+       url('NotoSansKR-Medium-Alphabetic.svg#NotoSansKR-Medium-Alphabetic') format('svg'),
+       url('NotoSansKR-Medium-Alphabetic.ttf') format('truetype'),
+       url('NotoSansKR-Medium-Alphabetic.woff') format('woff'),
+       url('NotoSansKR-Medium-Alphabetic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,286 @@
+@charset 'utf-8';
+
+@import url('../font/NotoSansKR-Regular/NotoSansKR-Regular.css');
+@import url('../font/NotoSansKR-Medium/NotoSansKR-Medium.css');
+@import url('../font/NotoSansKR-Bold/NotoSansKR-Bold.css');
+@import url('../font/nanumsquare/nanumsquare.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline-style: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+
+body {
+  font-family: 'NotoSansKR', sans-serif, Malgun Gothic;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+  line-height: 1.6;
+  color: #888;
+}
+
+/* 공통(재사용) */
+.inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* float를 해제 */
+.clearfix::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+/* 레이아웃 */
+.wrap {
+  position: relative;
+  display: block;
+}
+
+/* 상단영역 */
+.header {
+  position: relative;
+  display: block;
+}
+
+.header .inner {
+  position: relative;
+  display: block;
+}
+
+.logo {
+  position: relative;
+  display: block;
+  width: 221px;
+  height: 44px;
+  background: url('../images/logo-f.png') no-repeat center;
+  background-size: cover;
+  background-color: #333;
+  margin-top: 20px;
+  float: left;
+}
+
+.gnb {
+  position: relative;
+  display: block;
+  float: left;
+  background-color: cadetblue;
+  margin-left: 170px;
+}
+
+.menu {
+  position: relative;
+  display: block;
+}
+
+.menu>li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 70px;
+}
+
+.menu>li:last-child {
+  margin-right: 0;
+}
+
+.menu>li>a {
+  position: relative;
+  display: block;
+  color: #fff;
+  height: 80px;
+  line-height: 100px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.header-btn {
+  position: relative;
+  display: block;
+  float: right;
+  width: 160px;
+  height: 80px;
+  background-color: burlywood;
+}
+
+.header-btn-left {
+  position: relative;
+  display: block;
+  width: 50%;
+  margin-top: 35px;
+  padding-right: 30px;
+  border-right: 1px solid #fff;
+  font-size: 12px;
+  float: left;
+}
+
+.lang-box {
+  position: relative;
+  display: block;
+  width: 60px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #fff;
+}
+.lang-box::after{
+  content: '';
+  position: absolute;
+  top: 11px;
+  right: 6px;
+  display: block;
+  width: 10px;
+  height: 6px;
+  background: url('../images/lang_arrow.png') no-repeat center;
+}
+.lang-box:hover .lang-box-list{
+  display: block;
+  
+}
+.lang-box-list:hover .lang-box-list > li{
+  background-color: #ddd;
+  color: white;
+  width: 100%;
+}
+
+.lang-box-list {  
+  position: absolute;
+  left: -1px;
+  top: 23px;
+  display: none;
+  width: 60px;
+  
+  border: 1px solid #fff;
+  text-align: left;
+  padding-left: 9px;
+
+}
+
+.lang-box-list li {
+  position: relative;
+  display: block;
+  
+}
+.header-btn-right{
+  position: relative;
+  display: block;
+}
+.hb-bt{
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: block;
+  width: 35px;
+  height: 21px;
+  
+}
+.hb-bt::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -3px;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+.hb-bt span{
+  position: absolute;
+  right: 0;
+  top: 9px;
+  
+  display: block;
+  width: 75%;
+  height: 3px;
+  background-color: #fff;
+}
+.hb-bt::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* 비디오 */
+.video {
+  position: relative;
+  display: block;
+  
+}
+
+/* 제품정보 */
+.items {
+  position: relative;
+  display: block;
+}
+
+.items .inner {
+  position: relative;
+  display: block;
+}
+
+/* 회사소식 */
+.news {
+  position: relative;
+  display: block;
+}
+
+.news .inner {
+  position: relative;
+  display: block;
+}
+
+/* 정보모음 */
+.infor {
+  position: relative;
+  display: block;
+}
+
+.infor .inner {
+  position: relative;
+  display: block;
+}
+
+/* 하단영역 */
+.footer {
+  position: relative;
+  display: block;
+}
+
+.footer .inner {
+  position: relative;
+  display: block;
+}
