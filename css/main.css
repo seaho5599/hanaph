@@ -345,18 +345,45 @@ body {
 }
 .sw-item-control{
   position: absolute;
-  right: 73px;
-  bottom: 0px;
+  right: 55px;
+  bottom: 55px;
   display: block;
+  width: 168px;
   z-index: 999;
 
 }
 .sw-item-pg{}
+.sw-item-bt{
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 15px;
+  border: 0;
+  float: left;
+  font-family: 'Material Icons';
+  margin-right: 15px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.sw-item-bt span{
+  position: absolute;
+  top: -6px;
+  left: -10px;
+  display: block;
+  font-size: 30px;
+  color: #FFA937;
+  
+}
+.sw-item-bt-play{
+
+}
+
 .swiper-pagination-bullet{
   width: 17px;
   height: 17px;
   background-color: #FFA937;
-  margin-right: 10px;
+  margin-right: 10px; 
+  float: left;
 }
 /* 회사소식 */
 .news {
