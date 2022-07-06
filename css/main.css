@@ -67,7 +67,7 @@ body {
   display: block;
   width: 100%;
   transition: all 0.5s;
-  background-color: #FFA937;
+  /* background-color: #FFA937; */
   z-index: 999;
 }
 
@@ -89,12 +89,16 @@ body {
   margin-top: 29px;
   float: left;
 }
+.logo-2{
+  background: url('../images/logo-l.png') no-repeat center;
+}
 
 .gnb {
 
   display: block;
   float: left;
   margin-left: 170px;
+  
 }
 
 .menu {
@@ -106,52 +110,66 @@ body {
 
   display: block;
   float: left;
-  margin-right: 70px;
+  /* margin-right: 70px; */
 }
 
 .menu>li:last-child {
   margin-right: 0;
 }
 
-.menu>li>a {
-
+.gnb-name {
   display: block;
-  /* color: #fff; */
+  width: 100%;
   height: 80px;
+  color: #fff;
   line-height: 100px;
   font-size: 17px;
-
+  margin-right: 70px;
+  font-weight: 700;
 }
 
+.gnb-name-open{
+  color: #000;
+}
 .menu>li>a:hover {
   color: #009ECC;
 }
-
-.sub-box {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  display: block;
-  width: 100%;
-
-  padding: 32px 150px;
-
+.menu>li:hover .sub-list{
+  display:block
 }
+.sub-box {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+}
+
+
 
 .sub-list {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-
-  width: 100%;
-
+  display: none;
+  width: 910px;
+  height: 100%;
+  line-height: 80px;
+  text-align: center;
 }
 
 .sub-list li {
   position: relative;
-  display: block;
-  /* float: left; */
-
+  display: inline-block;
+  margin-right: 3.5%;
+  margin-left: 1.5%;
+}
+.sub-list li a:hover{
+  color: #ffd48f;;
+}
+.sub-list li:first-child{
+  margin-left: 0;
+}
+.sub-list li:last-child{
+  margin-right: 0;
 }
 
 .sub-list li::after {
@@ -164,27 +182,30 @@ body {
   display: inline-block;
   background:url('../images/sub_menu_dot.png') no-repeat center;
 }
-.sub-list li::after:last-child{
+
+.sub-list li:last-child::after{
   display: none;
 }
-
 .sub-list li a {
   position: relative;
   display: block;
   font-size: 16px;
-  /* color: #fff; */
+  color: #fff;
 }
 
 .sub-box-bg {
   position: absolute;
   top: 80px;
   left: 0;
-  display: block;
+  display: none;
   width: 100%;
   height: 80px;
   background: #20a4d4;
   opacity: 0.77;
   z-index: 99;
+}
+.sub-box-bg-open{
+  display: block;
 }
 
 
@@ -199,14 +220,16 @@ body {
 .header-btn-left {
   position: relative;
   display: block;
-  width: 50%;
+  width: 60%;
   margin-top: 35px;
   padding-right: 30px;
   border-right: 1px solid #fff;
   font-size: 12px;
   float: left;
 }
-
+.header-btn-left-open{
+  border-right: 1px solid #000;
+}
 .lang-box {
   position: relative;
   display: block;
@@ -217,7 +240,10 @@ body {
   font-weight: bold;
   color: #fff;
 }
-
+.lang-box-open{
+  border: 1px solid #000;
+  color: #000;
+}
 .lang-box::after {
   content: '';
   position: absolute;
@@ -228,18 +254,18 @@ body {
   height: 6px;
   background: url('../images/lang_arrow.png') no-repeat center;
 }
-
-.lang-box:hover .lang-box-list {
-  display: block;
-
+.lang-box-open::after{
+  background: url('../images/lang_arrow_sticky.png') no-repeat center;
 }
-
-.lang-box-list>li:hover {
-  background-color: #ddd;
-  color: white;
-  width: 100%;
+.lang-box-open-black{
+  background: url('../images/lang_arrow_sticky.png') no-repeat center;
+  transform: rotate(180deg);
 }
-
+.lang-box-click::after{
+  
+  background: url('../images/lang_arrow.png') no-repeat center;
+  transform: rotate(180deg);
+}
 .lang-box-list {
   position: absolute;
   left: -1px;
@@ -249,7 +275,9 @@ body {
   border: 1px solid #fff;
   text-align: left;
 }
-
+.lang-box-list-open{
+  border: 1px solid #000;
+}
 .lang-box-list>li {
   position: relative;
   display: block;
@@ -263,7 +291,9 @@ body {
   color: #fff;
   margin-left: 9px;
 }
-
+.lang-box-lang-open{
+  color: #000;
+}
 .header-btn-right {
   position: relative;
   display: block;
@@ -276,7 +306,9 @@ body {
   display: block;
   width: 35px;
   height: 21px;
-
+}
+.hb-bt-open{
+  display: block;
 }
 
 .hb-bt::before {
@@ -289,8 +321,7 @@ body {
   height: 3px;
   background-color: #fff;
 }
-
-.hb-bt span {
+.hb-bt-line {
   position: absolute;
   right: 0;
   top: 9px;
@@ -299,7 +330,6 @@ body {
   height: 3px;
   background-color: #fff;
 }
-
 .hb-bt::after {
   content: '';
   position: absolute;
@@ -309,6 +339,18 @@ body {
   width: 100%;
   height: 3px;
   background-color: #fff;
+}
+.hb-bt-open::before {
+  
+  background-color: #000;
+}
+.hb-bt-line-open {
+
+  background-color: #000;
+}
+.hb-bt-open::after {
+
+  background-color: #000;
 }
 
 /* 비주얼 */
