@@ -1,47 +1,106 @@
+$(document).ready(function () {
+  // 안내창 기능
+  // 추가기능:  스크롤바 없에기
+  $('html').css('overflow', 'hiden');
+  let modalWrap = $('.modal-wrap');
+  let modalClose = $('.modal-close');
+  modalClose.click(function () {
+    modalWrap.stop().fadeOut(100);
+    // 추가기능:  스크롤바 살리기
+    $('html').css('overflow', 'auto');
+  });
+  let modalMain = $('.modal-main');
+  // 내용배경 클릭
+  modalMain.click(function (event) {
+    event.stopPropagation();
+  });
+  // 전체 배경 클릭
+  modalWrap.click(function () {
+    modalWrap.stop().fadeOut(100);
+    $('html').css('overflow', 'auto');
+  });
+});
+$(document).ready(function () {
+  // Header
+  let header = $('.header');
+  let langBox = $('.lang-box');
+  let gnb = $('.gnb');  
+  gnb.mouseenter(function () {
+
+      header.css('background', '#fff');
+      $('.logo').css('background', 'url(images/logo-l.png) no-repeat center');
+      $('.gnb-name').css('color', '#000');
+      langBox.css({
+        'border': '1px solid #000',
+        'color': '#000'
+      });
+      
+      langBox.addClass('lang-box-black');
+      
+      $('.lang-box-list').css('border', '1px solid #000');
+      $('.lang-box-lang').css('color', '#000');
+      $('.hb-bt-line').css('background', '#000');
+      $('.header-btn-left').css('border-right', '1px solid #000');
+      $('.hb-bt').addClass('hb-bt-open');
+      
+        
+  });
+  let gnbName = $('.gnb-name');
+  let subList = $('.sub-list');
+  $.each(gnbName, function (index) {
+    $(this).mouseenter(function () {
+      subList.hide();
+      subList.eq(index).show();
+    });
+  });
+  $('.visual').mouseenter(function () {
+    subList.stop().fadeOut(200);
+    header.css('background', 'transparent');
+      $('.logo').css('background', 'url(images/logo-f.png) no-repeat center');
+      $('.gnb-name').css('color', '#fff');
+      langBox.css({
+        'border': '1px solid #fff',
+        'color': '#fff'
+      });
+      langBox.removeClass('lang-box-black');
+      $('.lang-box-list').css('border', '1px solid #fff');
+      $('.lang-box-lang').css('color', '#fff');
+      $('.hb-bt-line').css('background', '#fff');
+      $('.header-btn-left').css('border-right', '1px solid #fff');
+      $('.hb-bt').removeClass('hb-bt-open');
+
+  });
+  langBox.click(function(){
+    $('.lang-box-list').toggle();
+    $('.lang-box').toggleClass('lang-box-click');
+  });
+
+
+
+});
 window.onload = function() {
-  // gnb
-let header = $('.header');
-let logo = $('.logo');
-let gnb = $('.gnb');
-let gnb_name = $('.gnb-name');
-let sub_box_bg = $('.sub-box-bg');
-let header_btn = $('.header-btn');
-let lang_box = $('.lang-box');
-let lang_box_list = $('.lang-box-list');
-let header_btn_left = $('.header-btn-left');
-let hb_bt = $('.hb-bt')
-let hb_bt_line = $('.hb-bt-line');
-let lang_box_lang = $('.lang-box-lang');
-gnb.mouseenter(function(){
-  header.addClass('change');
-  logo.addClass('logo-2');
-  gnb_name.addClass('gnb-name-open');
-  sub_box_bg.addClass('sub-box-bg-open');
-  lang_box.addClass('lang-box-open');
-  header_btn_left.addClass('header-btn-left-open');
-  hb_bt_line.addClass('hb-bt-line-open');
-  hb_bt.addClass('hb-bt-open');
-  lang_box_list.addClass('.lang-box-list');
-  lang_box_lang.addClass('.lang-box-lang');
-});
-gnb.mouseleave(function(){
-  header.removeClass('change');
-  logo.removeClass('logo-2');
-  gnb_name.removeClass('gnb-name-open')
-  sub_box_bg.removeClass('sub-box-bg-open');
-  lang_box.removeClass('lang-box-open');
-  header_btn_left.removeClass('header-btn-left-open');
-  hb_bt.removeClass('hb-bt-open');
-  hb_bt_line.removeClass('hb-bt-line-open');
-  lang_box_list.removeClass('.lang-box-list-open');
-  lang_box_lang.removeClass('.lang-box-lang-open');
-});
-lang_box.click(function(){
-  lang_box_list.fadeToggle(0);
-  lang_box.toggleClass('lang-box-click');
-});
-$('lang-box-open').click(function(){
-  $(this).toggleClass('lang-box-open-black');
+// gnb
+// visual play버튼
+let video = $('video').get(0);
+let video_btn = $('.video-btn');
+
+video_btn.click(function(){
+  let temp = $(this).hasClass('video-btn-play');
+  if(temp == true){
+    
+    $(this).removeClass('video-btn-play');
+    video.play();
+
+  }else{
+    
+    $(this).addClass('video-btn-play');
+    video.pause();
+    
+  };
+  
+
+
+
 });
 
   //item스와이퍼
