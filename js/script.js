@@ -20,6 +20,22 @@ $(document).ready(function () {
     $('html').css('overflow', 'auto');
   });
 });
+// more-menu메뉴
+$(document).ready(function(){
+  let moreMenu = $('.more-menu');
+  let moreMenuClose = $('.more-menu-close');
+  let hbBt = $('.hb-bt')
+  hbBt.click(function(event){
+    event.stopPropagation();
+    moreMenu.fadeIn();
+  });
+
+  moreMenuClose.click(function(){
+    moreMenu.fadeOut();
+  });
+
+}); 
+
 $(document).ready(function () {
   // Header
   let header = $('.header');
@@ -43,15 +59,7 @@ $(document).ready(function () {
       $('.header-btn-left').css('border-right', '1px solid #000');
       $('.hb-bt').addClass('hb-bt-open');
       
-        
-  });
-  let gnbName = $('.gnb-name');
-  let subList = $('.sub-list');
-  $.each(gnbName, function (index) {
-    $(this).mouseenter(function () {
-      subList.hide();
-      subList.eq(index).show();
-    });
+      
   });
   $('.visual').mouseenter(function () {
     subList.stop().fadeOut(200);
@@ -70,11 +78,39 @@ $(document).ready(function () {
       $('.hb-bt').removeClass('hb-bt-open');
 
   });
+  let gnbName = $('.gnb-name');
+  let subList = $('.sub-list');
+  $.each(gnbName, function (index) {
+    $(this).mouseenter(function () {
+      subList.hide();
+      subList.eq(index).show();
+    });
+  });
+
   langBox.click(function(){
     $('.lang-box-list').toggle();
     $('.lang-box').toggleClass('lang-box-click');
   });
 
+  $(window).resize(function(){
+    let temp = $(window).width();
+    if(temp > 1000){
+      $('.visual').mouseenter(function () {
+        header.css('background', '#fff');
+        $('.logo').css('background', 'url(images/logo-l.png) no-repeat center');
+        langBox.css({
+          'border': '1px solid #000',
+          'color': '#000'
+        });
+        langBox.addClass('lang-box-black'); 
+        $('.lang-box-lang').css('color', '#000');
+        $('.hb-bt-line').css('background', '#000');
+        $('.header-btn-left').css('border-right', '1px solid #000');
+        $('.hb-bt').addClass('hb-bt-open');
+    
+      });
+    }
+  });
 
 
 });

@@ -129,7 +129,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  display: block;
+  display: none;
   width: 100%;
   height: 90px;
   z-index: 99998;
@@ -147,9 +147,70 @@ body {
   margin: 0 auto;
   margin-top: 30px;
 }
+.more-menu-close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url('../images/more-menu-close.png') no-repeat center;
+  border: 0;
+  cursor: pointer;
+}
+.more-gnb{
+  position: relative;
+  top: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100vw;
+  height: 100%;
+  background: #f3f4f6;
+}
+.more-deth1{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1130px;
+}
+.more-deth1 > li{
+  position: relative;
+  display: block;
+  float: left;
+  width: 20%;
+  height: 371px;
+  border-left: 1px solid #dbdbdb;
+  padding-left: 30px;
+}
+.more-deth1 > li:first-child{
+  border-left: 0;
+}
+.more-deth1 > li > p{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 50px;
+}
+.more-deth1 > li > p::after{
+  content: '';
+  display: block;
+  width: 27px;
+  height: 1px;
+  margin: 15px 0 10px 0;
+  background: #959595;
+}
+.more-deth2{
 
-
-
+}
+.more-deth2 li{
+  padding-bottom: 5px;
+}
+.more-deth2 li a{
+  font-size: 17px;
+  color: #000;
+  font-weight: 300;
+}
 
 
 /* 상단영역 */
@@ -158,11 +219,12 @@ body {
   display: block;
   width: 100%;
   transition: all 0.5s;
-  background-color: transparent;
+  background: transparent;
   z-index: 9999;
 }
 
 /* .change {
+  display: none;
   background-color: #fff;
 } */
 
@@ -432,6 +494,7 @@ body {
 .hb-bt-open::after{
   background-color: #000
 }
+
 @media all and (max-width:1175px){
   .logo {
     width: 18vw; 
@@ -461,8 +524,8 @@ body {
     display: none;
   }
   .hb-bt {
-    top: 30px;
-    /* right: 30%; */
+    top: 27px;
+    right: 20%;
     
   }
   
@@ -484,8 +547,10 @@ body {
   .header-btn-left {
     position: relative;
     display: block;
-    width: 60%;
-    margin-top: 15px;
+    width: 50%;
+    height: 50%;
+    line-height: 20px;
+    margin-top: 20px;
     padding-right: 30px;
     border-right: 1px solid #000;
     font-size: 2vw;
@@ -505,7 +570,7 @@ body {
   .lang-box::after {
     content: '';
     position: absolute;
-    top: 14px;
+    top: 10px;
     right: -20px;
     display: block;
     
@@ -519,26 +584,24 @@ body {
   
   .lang-box-list {
     position: absolute;
-    left: -1px;
-    top: 30px;
-    display: none;
-    width: 60px;
-    text-align: left;
+    left: 20%;
+    top: 100%;
+    width: 8vw;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 2vw;
   }
   
   .lang-box-list>li {
-    position: relative;
-    display: block;
-    z-index: 99;
-    
+    padding: 0.5vw 1vw;
+  }
+  
+  .lang-box-lang {
+    font-weight: 100;
+    color: #000;
+    margin-left: 0;
   }
 
-  .lang-box-lang {
-    position: relative;
-    display: block;
-    color: #fff;
-    margin-left: 9px;
-  }
 }
 /* 비주얼 */
 .visual {
@@ -580,15 +643,58 @@ body {
 .video-btn-play::after{
   background: rgb(224, 41, 41);
 }
+@media all and (max-width:1000px){
+  .visual {
+    width: 100%;
+    height: 128vw;
+    background: url('../images/visual-bg-m.jpg') no-repeat center;
+    background-size: cover;
+  }
+  
+  .video {
+
+    display: none;
+    
+  }
+  .video-btn{
+    position: absolute;
+    left: 380px;
+    top: 65%;
+    width: 10px;
+    height: 15px;
+    background: url('../images/kv_btn_pause.png') no-repeat center;
+    background-size: cover;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+  }
+  .video-btn::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -25px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #50daf4
+  }
+  .video-btn-play{
+    background: url('../images/kv_btn_play.png') no-repeat center;
+    background-size: cover;
+  }
+  .video-btn-play::after{
+    background: rgb(224, 41, 41);
+  }
+}
 
 /* 제품정보 */
 .items {
   position: relative;
   display: block;
   /* width: 100%; */
-  height: 486px;
-  background: url('../images/item-bg.png') no-repeat center;
-  background-size: cover;
+  height: 492px;
+  background: url('../images/item-bg.png') no-repeat;
+  /* background-size: cover; */
 }
 
 .items .inner {
@@ -725,6 +831,140 @@ body {
   float: left;
 }
 
+@media all and (max-width:1170px){
+  .items-left h2 {
+    line-height: 5vw;
+    margin-bottom: 2vw;
+  
+  }
+  
+  .items-left p {
+    line-height: 2.3vw;
+    margin-bottom: 5.2vw;
+  }
+  
+  .items-left-button {
+    position: relative;
+    display: block;
+    width: 160px;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    color: #fff;
+    padding: 10px 0;
+    padding-left: 23px;
+  }
+  
+  .items-right {
+    width: 57vw;
+    height: 40vw;
+    padding-left: 7vw;
+    /* padding-bottom: 25vw; */
+  }
+  .sw-item {
+    width: 55.21vw;
+  }
+}
+@media all and (max-width:1000px){
+  .items {
+    background-size: 300%;
+    background-position-x: 12%;
+    background-position-y: 0%;
+    height: 100vw;
+    
+  }
+  
+  .items .inner {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 160px 70px;
+  }
+  
+  .items-left {
+    position: absolute;
+    top: 15vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .items-left h2 {
+    font-size: 6.5vw;
+    line-height: 7vw;
+    text-align: center;
+  }
+  
+  .items-left p {
+    font-size: 3.3vw;
+    line-height: 5vw;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    text-align: center;
+    white-space: nowrap;  
+  }
+  
+  .items-left-button {
+    margin: 0 auto;
+    width: 50%;
+    color: #fff;
+    padding: 2% 7%;
+    border-radius: 5vw;
+    font-size: 2.7vw;
+    text-align: center;
+  }
+
+  .items-right {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80%;
+    display: block;
+    width: 723px;
+    height: 460px;
+    float: right;
+    padding-left: 77px;
+    padding-bottom: 58px;
+  
+  }
+  
+  .sw-item {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sw-item-control {
+    position: absolute;
+    right: 55px;
+    bottom: 55px;
+    display: block;
+    width: 168px;
+    z-index: 999;
+  
+  }
+  .sw-item-bt {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 15px;
+    border: 0;
+    float: left;
+    margin-right: 15px;
+    cursor: pointer;
+    background: url('../images/btn_pause.png') no-repeat center;
+  }
+  
+  .sw-item-bt-play {
+    background: url('../images/btn_play.png') no-repeat center;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 17px;
+    height: 17px;
+    background-color: #FFA937;
+    margin-right: 10px;
+    float: left;
+  }
+  
+}
 /* 회사소식 */
 .news {
   position: relative;
