@@ -162,16 +162,16 @@ window.onload = function () {
       $(this).addClass('sw-item-bt-play');
     }
   });
-
-
   $(window).resize(function () {
     let temp = $(window).width();
     if (temp <= 1000) {
       // news 반응형 스와이퍼
       let swNews = new Swiper('.sw-news', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-
+        // loop: true,
+        navigation: {
+          nextEl: ".sw-news-next",
+          prevEl: ".sw-news-prev",
+        },
 
       })
 
