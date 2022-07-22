@@ -173,6 +173,12 @@ window.onload = function () {
           prevEl: ".sw-news-prev",
         },
 
+      });
+      let swJob = new Swiper('.sw-job', {
+        navigation: {
+          nextEl: ".sw-job-next",
+          prevEl: ".sw-job-prev"
+        }
       })
 
     }

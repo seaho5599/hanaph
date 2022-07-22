@@ -233,6 +233,71 @@ body {
   color: #000;
   font-weight: 300;
 }
+@media all and (max-width:1000px){
+  .more-menu {
+    height: 9vw;
+  }
+
+  .more-logo {
+    background: url('../images/ci_b.png') no-repeat center;
+    margin-top: 25px;
+  }
+  
+  .more-menu-close {
+    right: 3vw;
+    top: 0vw;
+    background: url('../images/more-menu-close-m.png') no-repeat center;
+  }
+  
+  .more-gnb {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 101vw;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .more-deth1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    max-width: 1130px;
+  }
+  
+  .more-deth1>li {
+    float: none;
+    width: 50%;
+    border-left: 0px solid #dbdbdb;
+    height: 100vw;
+    padding: 5%;
+    margin-top: 4%;
+  }
+
+  .more-deth1>li>p {
+    font-size: 4vw;
+    padding-top: 0;
+  }
+  
+  .more-deth1>li>p::after {
+    width: 100%;
+    height: 3px;
+    background: #369cbe;
+    margin-bottom: 0;
+  }
+
+  .more-deth2 li {
+    border-bottom: 1px solid #cacaca;
+    margin: 0;
+    padding: 5% 0;
+  }
+  .more-deth2 li a {
+    font-weight: 300;
+    font-size: 3vw;
+  }
+}
 
 
 /* 상단영역 */
@@ -1470,13 +1535,13 @@ body {
     background-size: cover;
     height: 110vw;
   }
-  
+
   .newproduct .inner {
     position: relative;
     display: block;
     height: 100%;
   }
-  
+
   .newproduct-box {
     position: absolute;
     top: 10%;
@@ -1486,19 +1551,19 @@ body {
     width: 100%;
     text-align: center;
   }
-  
+
   .newproduct-box h2 {
     font-size: 6.5vw;
     line-height: 7vw;
   }
-  
+
   .newproduct-box p {
     font-size: 3.3vw;
     line-height: 5vw;
     margin-top: 3%;
     margin-bottom: 7%;
   }
-  
+
   .newproduct-box-btn {
     display: block;
     width: 25vw;
@@ -1508,7 +1573,7 @@ body {
     border-radius: 50px;
     padding: 2.5vw 0;
   }
-  
+
 }
 
 .job {
@@ -1543,7 +1608,7 @@ body {
   color: #fff;
 }
 
-.job-left > p {
+.job-left>p {
   position: relative;
   display: block;
   width: 100%;
@@ -1560,7 +1625,7 @@ body {
 .sw-job {
   position: relative;
   display: block;
-  
+
   float: left;
   margin-top: 130px;
   margin-left: 50px;
@@ -1575,7 +1640,8 @@ body {
   height: 100%;
   flex-shrink: 1;
 }
-.job-box{
+
+.job-box {
   position: relative;
   display: block;
   width: 260px;
@@ -1590,6 +1656,7 @@ body {
   transition: all 0.5s;
   padding: 40px 0;
 }
+
 .job-right-title {
   position: relative;
   display: block;
@@ -1622,151 +1689,194 @@ body {
   cursor: pointer;
 }
 
+.sw-job-prev {
+  position: absolute;
+  left: 8%;
+  top: 44%;
+  display: none;
+  width: 4vw;
+  height: 8vw;
+  background: url('../images/recruit_arrow_on.png') no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  border: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.sw-job-next {
+  position: absolute;
+  right: 8%;
+  top: 45%;
+  display: none;
+  width: 4vw;
+  height: 8vw;
+  background: url('../images/recruit_arrow_on.png') no-repeat;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.sw-job-prev.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.sw-job-next.swiper-button-disabled {
+  opacity: 0.5;
+}
+
 .job-right-btn:hover {
   background: #fff;
   color: #009AC2;
 }
-@media all and (max-width:1178px){
+
+@media all and (max-width:1178px) {
   .job-left h2 {
     font-size: 4.1vw;
   }
-  
-  .job-left > p {
+
+  .job-left>p {
     font-size: 1.4vw;
     margin-top: 2.1vw;
   }
+
   .sw-job {
     margin-left: 0.42vw;
   }
-  
-  .job-box{
+
+  .job-box {
     width: 22vw;
     height: 22vw;
     margin-left: 0.12vw;
     padding: 3.4vw 0;
   }
+
   .job-right-title {
 
     font-size: 2vw;
     margin-bottom: 25px;
     font-weight: 700;
   }
-  
+
   .job-right-txt {
     font-size: 1.1vw;
     margin-bottom: 2.5vw;
   }
-  
+
   .job-right-btn {
     width: 8.1vw;
     transition: all 0.3s;
   }
 }
-@media all and (max-width:1000px){
+
+@media all and (max-width:1000px) {
   .job {
     height: 100vw;
     background: url('../images/job-bg-m.jpg') no-repeat center;
     background-size: cover;
     overflow: hidden;
   }
-  
+
   .job .inner {
     position: relative;
     display: block;
-  
+
   }
-  
+
   .job-left {
     float: none;
     width: 100%;
     margin: 0 auto;
     padding-top: 100px;
   }
-  
+
   .job-left h2 {
     font-weight: 700;
     font-size: 6.5vw;
     line-height: 7vw;
     text-align: center;
   }
-  
-  .job-left > p {
-    position: relative;
-    display: block;
-    font-weight: 300;
-    color: #fff;
-    line-height: 25px;
+
+  .job-left>p {
     font-size: 3.3vw;
     margin-top: 25px;
     text-align: center;
   }
-  
+
   .sw-job {
-    position: relative;
-    display: block;
-    
-    float: left;
+    position: absolute;
+    top: 70%;
+    left: 12%;
+    width: 650px;
+    height: 650px;
+    float: none;
     margin-top: 130px;
     margin-left: 50px;
-    text-align: center;
-  
+
+
   }
-  
+
   .sw-job .swiper-slide {
-    position: relative;
-    display: block;
     width: 100%;
     height: 100%;
     flex-shrink: 0;
   }
-  .job-box{
-    position: relative;
-    display: block;
-    width: 260px;
-    height: 260px;
-    background: #009AC2;
+
+  .job-box {
+
+    width: 97%;
+    height: 100%;
+
     border-radius: 50%;
-    text-align: center;
-    color: #fff;
+
     margin-left: 15px;
     opacity: 0.8;
     outline: none;
     transition: all 0.5s;
     padding: 40px 0;
   }
+
   .job-right-title {
     position: relative;
     display: block;
-    font-size: 24px;
+    font-size: 5vw;
+    margin-top: 10vw;
     margin-bottom: 25px;
     font-weight: 700;
   }
-  
+
   .job-right-txt {
     position: relative;
     display: block;
-    font-size: 14px;
-    margin-bottom: 30px;
+    width: 42%;
+    font-size: 3vw;
+    margin-bottom: 8%;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: 300;
-    line-height: 25px;
-  
+    line-height: 40px;
+
   }
-  
+
   .job-right-btn {
     position: relative;
     display: inline-block;
-    width: 96px;
-    padding: 6px 0;
-    border-radius: 15px;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 14px;
-    transition: all 0.3s;
-    background: transparent;
-    cursor: pointer;
+    font-size: 3vw;
+    padding: 5% 7%;
+    width: auto;
+    border-radius: 5vw;
   }
-  
+
+  .sw-job-prev {
+    display: block;
+  }
+
+  .sw-job-next {
+    display: block;
+  }
 }
+
 /* 하단영역 */
 .footer {
   position: relative;
@@ -1902,10 +2012,96 @@ body {
 .footer-txt p em {
   margin-right: 17px;
 }
-
+.footer-txt p i{
+  margin-right: 17px;
+}
 .copy {
   position: relative;
   display: block;
   color: #a7a5a5;
+}
+.copy br{
+  display: none;
+}
 
+@media all and (max-width:1000px) {
+
+  .footer .inner {
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    
+  }
+
+  .footer-left {
+
+    float: none;
+    padding: 7vw 6vw;
+  }
+
+  .footer-left li a {
+
+    font-size: 3vw;
+    line-height: 1vw;
+  }
+
+  .footer-right {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    float: none;
+    padding: 5% 5% 0 5%;
+  }
+
+  .footer-group {
+    width: calc(50% - 5px);
+    font-size: 3vw;
+    padding: 3% 5%;
+    background: transparent url('../images/footer-btn-arrow.png') no-repeat 90%;
+    text-align: left;
+  }
+
+  .footer-order {
+    width: calc(50% - 5px);
+    font-size: 3vw;
+    padding: 3% 5%;
+    text-align: left;
+    background: transparent url('../images/footer-btn-arrow.png') no-repeat 95%;
+  }
+
+  .footer-line {
+    display: none;
+  }
+
+  .f-logo {
+    display: none;
+  }
+  .footer-txt {
+    padding-left: 0;
+    margin-right: 9vw;
+  }
+  
+
+.footer-txt p {
+
+    font-size: 3vw;
+    line-height: 4.5vw;
+  }
+
+  .footer-txt p span {
+    display: block;
+  }
+  .footer-txt p .f-span{
+    display: inline-block;
+  }
+
+  .footer-txt p i {
+    display: none;
+  }
+  
+
+  .copy br{
+    display: block;
+  }
 }
