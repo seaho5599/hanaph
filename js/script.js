@@ -43,40 +43,33 @@ $(document).ready(function () {
   let gnb = $('.gnb');
   gnb.mouseenter(function () {
 
-    header.css('background', '#fff');
-    $('.logo').css('background', 'url(images/logo-l.png) no-repeat center');
-    $('.gnb-name').css('color', '#000');
-    langBox.css({
-      'border': '1px solid #000',
-      'color': '#000'
-    });
-
-    langBox.addClass('lang-box-black');
-
-    $('.lang-box-list').css('border', '1px solid #000');
-    $('.lang-box-lang').css('color', '#000');
-    $('.hb-bt-line').css('background', '#000');
-    $('.header-btn-left').css('border-right', '1px solid #000');
+    header.addClass('header-ch');
+    $('.logo').addClass('logo-2');
+    $('.gnb-name').addClass('gnb-name-ch');
+    langBox.addClass('lang-box-ch');
+    $('.lang-box-list').addClass('lang-box-list-ch');
+    $('.lang-box-lang').addClass('lang-box-lang-ch');
+    $('.hb-bt-line').addClass('hb-bt-line-ch');
+    $('.header-btn-left').addClass('header-btn-left-ch');
     $('.hb-bt').addClass('hb-bt-open');
-
-
+    langBox.click(function(){
+      langBox.toggleClass('lang-box-ch-click')
+      langBox.removeClass('lang-box-click')
+      
+    })
   });
   $('.visual').mouseenter(function () {
     subList.stop().fadeOut(200);
-    header.css('background', 'transparent');
-    $('.logo').css('background', 'url(images/logo-f.png) no-repeat center');
-    $('.gnb-name').css('color', '#fff');
-    langBox.css({
-      'border': '1px solid #fff',
-      'color': '#fff'
-    });
-    langBox.removeClass('lang-box-black');
-    $('.lang-box-list').css('border', '1px solid #fff');
-    $('.lang-box-lang').css('color', '#fff');
-    $('.hb-bt-line').css('background', '#fff');
-    $('.header-btn-left').css('border-right', '1px solid #fff');
+    header.removeClass('header-ch');
+    $('.logo').removeClass('logo-2');
+    $('.gnb-name').removeClass('gnb-name-ch');
+    langBox.removeClass('lang-box-ch');
+    $('.lang-box-list').removeClass('lang-box-list-ch');
+    $('.lang-box-lang').removeClass('lang-box-lang-ch');
+    $('.hb-bt-line').removeClass('hb-bt-line-ch');
+    $('.header-btn-left').removeClass('header-btn-left-ch');
     $('.hb-bt').removeClass('hb-bt-open');
-
+    
   });
   let gnbName = $('.gnb-name');
   let subList = $('.sub-list');
@@ -89,25 +82,21 @@ $(document).ready(function () {
 
   langBox.click(function () {
     $('.lang-box-list').toggle();
-    $('.lang-box').toggleClass('lang-box-click');
+    langBox.toggleClass('lang-box-click');
+    
   });
 
   $(window).resize(function () {
     let temp = $(window).width();
     if (temp > 1000) {
       $('.visual').mouseenter(function () {
-        header.css('background', '#fff');
-        $('.logo').css('background', 'url(images/logo-l.png) no-repeat center');
-        langBox.css({
-          'border': '1px solid #000',
-          'color': '#000'
-        });
-        langBox.addClass('lang-box-black');
-        $('.lang-box-lang').css('color', '#000');
-        $('.hb-bt-line').css('background', '#000');
-        $('.header-btn-left').css('border-right', '1px solid #000');
+        header.addClass('header-ch');
+        $('.logo').addClass('logo-2');
+        langBox.addClass('lang-box-ch');
+        $('.lang-box-lang').addClass('lang-box-lang-ch');
+        $('.hb-bt-line').addClass('hb-bt-line-ch');
+        $('.header-btn-left').addClass('header-btn-left-ch');
         $('.hb-bt').addClass('hb-bt-open');
-
       });
     }
   });
@@ -122,7 +111,7 @@ window.onload = function () {
 
   video_btn.click(function () {
     let temp = $(this).hasClass('video-btn-play');
-    if (temp == true) {
+    if (temp) {
 
       $(this).removeClass('video-btn-play');
       video.play();
@@ -133,10 +122,6 @@ window.onload = function () {
       video.pause();
 
     };
-
-
-
-
   });
 
   //item스와이퍼
