@@ -41,8 +41,26 @@ $(document).ready(function () {
   let header = $('.header');
   let langBox = $('.lang-box');
   let gnb = $('.gnb');
-  gnb.mouseenter(function () {
+  let visual = $('.visual')
 
+  // toggle 된 상태
+  let langToggle = false;
+
+  langBox.click(function (e) {
+    e.stopPropagation();
+    
+    if (langToggle) {
+      langToggle = false;
+      $(this).removeClass('lang-box-click');
+      $('.lang-box-list').hide();
+    } else {
+      langToggle = true;
+      $(this).toggleClass('lang-box-click');
+      $('.lang-box-list').show();
+    }
+  });
+
+    gnb.mouseenter(function () {
     header.addClass('header-ch');
     $('.logo').addClass('logo-2');
     $('.gnb-name').addClass('gnb-name-ch');
@@ -52,24 +70,21 @@ $(document).ready(function () {
     $('.hb-bt-line').addClass('hb-bt-line-ch');
     $('.header-btn-left').addClass('header-btn-left-ch');
     $('.hb-bt').addClass('hb-bt-open');
-    langBox.click(function(){
-      langBox.toggleClass('lang-box-ch-click')
-      langBox.removeClass('lang-box-click')
-      
-    })
+
   });
-  $('.visual').mouseenter(function () {
+  visual.mouseenter(function () {
     subList.stop().fadeOut(200);
     header.removeClass('header-ch');
     $('.logo').removeClass('logo-2');
     $('.gnb-name').removeClass('gnb-name-ch');
     langBox.removeClass('lang-box-ch');
+    langBox.removeClass('lang-box-ch-click');
     $('.lang-box-list').removeClass('lang-box-list-ch');
     $('.lang-box-lang').removeClass('lang-box-lang-ch');
     $('.hb-bt-line').removeClass('hb-bt-line-ch');
     $('.header-btn-left').removeClass('header-btn-left-ch');
     $('.hb-bt').removeClass('hb-bt-open');
-    
+
   });
   let gnbName = $('.gnb-name');
   let subList = $('.sub-list');
@@ -79,28 +94,6 @@ $(document).ready(function () {
       subList.eq(index).show();
     });
   });
-
-  langBox.click(function () {
-    $('.lang-box-list').toggle();
-    langBox.toggleClass('lang-box-click');
-    
-  });
-
-  $(window).resize(function () {
-    let temp = $(window).width();
-    if (temp > 1000) {
-      $('.visual').mouseenter(function () {
-        header.addClass('header-ch');
-        $('.logo').addClass('logo-2');
-        langBox.addClass('lang-box-ch');
-        $('.lang-box-lang').addClass('lang-box-lang-ch');
-        $('.hb-bt-line').addClass('hb-bt-line-ch');
-        $('.header-btn-left').addClass('header-btn-left-ch');
-        $('.hb-bt').addClass('hb-bt-open');
-      });
-    }
-  });
-
 
 });
 window.onload = function () {
@@ -147,25 +140,71 @@ window.onload = function () {
       $(this).addClass('sw-item-bt-play');
     }
   });
-  $(window).resize(function () {
-    let temp = $(window).width();
-    if (temp <= 1000) {
-      // news 반응형 스와이퍼
-      let swNews = new Swiper('.sw-news', {
-        // loop: true,
-        navigation: {
-          nextEl: ".sw-news-next",
-          prevEl: ".sw-news-prev",
-        },
+  let wW = window.innerWidth;
+  let swJob = null;
+  let swNews = null; 
 
-      });
-      let swJob = new Swiper('.sw-job', {
-        navigation: {
-          nextEl: ".sw-job-next",
-          prevEl: ".sw-job-prev"
-        }
-      })
+  if(wW <= 1000) { 
+    swJob = new Swiper('.sw-job', {
+      navigation: {
+        nextEl: ".sw-job-next",
+        prevEl: ".sw-job-prev"
+      }
+    });
+    swNews = new Swiper('.sw-news', {
+      // loop: true,
+      navigation: {
+        nextEl: ".sw-news-next",
+        prevEl: ".sw-news-prev",
+      },
+    });
+  }
+
+
+
+  $(window).resize(function () {
+    // let temp = $(window).width();
+    let temp = window.innerWidth;
+
+    if (temp <= 1000) {
+      if(swNews == null){
+        swNews = new Swiper('.sw-news', {
+          // loop: true,
+          navigation: {
+            nextEl: ".sw-news-next",
+            prevEl: ".sw-news-prev",
+          },
+        });
+      }
+
+      // swJob 없다면 한번만 만들기
+      if(swJob == null) {       
+        swJob = new Swiper('.sw-job', {
+          navigation: {
+            nextEl: ".sw-job-next",
+            prevEl: ".sw-job-prev"
+          }
+        });
+      }
+
+    }else{
+      
+      // swJob 있으면 한번만 지우기
+      $('.sw-news .swiper-slide').removeAttr('style', 0);
+      if(swNews != null) {    
+        swNews.destroy();
+        swNews = null;
+      }
+      // swJob 있으면 한번만 지우기
+      $('.sw-job .swiper-slide').removeAttr('style', 0);
+      if(swJob != null) {    
+        swJob.destroy();
+        swJob = null;
+      }
 
     }
-  })
+
+  });
+
+  
 }
