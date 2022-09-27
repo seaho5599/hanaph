@@ -95,14 +95,15 @@ body {
   height: 3px;
   background: #999;
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .modal-main span {
+  display: block;
   font-size: 16px;
   font-weight: 400;
   color: #333;
   line-height: 1.8;
-  padding: 10px;
+  padding: 5px 10px;
   letter-spacing: 0.5px;
 }
 .modal-close {
