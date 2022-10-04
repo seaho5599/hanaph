@@ -55,7 +55,7 @@ body {
   transform: translate(-50%, -50%);
   width: 550px;
   height: 450px;
-  background: url("../images/modalimg.png") no-repeat center #fff;
+  background: #fff;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0px 0px 7px 0px rgba(0 0 0 / 70%);
